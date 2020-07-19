@@ -40,12 +40,13 @@ class App extends React.Component {
     fetch((todoURL + "/" + id), {method: "DELETE"})
   }
 
+
   render(){
     return (
     <div className="App">
       <h1>Todo app!</h1>
-      <TodoForm addTodo={this.addTodo}/>
-      <TodoContainer todos={this.state.todos} deleteTodo={this.deleteTodo} />
+      <TodoForm key={this.state.todos.id} addTodo={this.addTodo}/>
+      <TodoContainer key={this.state.todos.id} todos={this.state.todos} deleteTodo={this.deleteTodo} />
     </div>
   )};
 }
